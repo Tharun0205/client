@@ -61,7 +61,7 @@ const InvoiceForm = () => {
   const invoiceData = { ...form, subtotal: undefined, total };
 
   try {
-    const res = await axios.post('https://invoice-generator-6mfzlw7k6-taruns-projects-cdc632e0.vercel.app/api/invoices', invoiceData, {
+    const res = await axios.post('https://invoice-generator-ebon-eight.vercel.app/api/invoices', invoiceData, {
       withCredentials: true
     });
 
