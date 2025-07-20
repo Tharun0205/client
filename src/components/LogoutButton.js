@@ -8,7 +8,7 @@ const LogoutButton = ({ onLogout }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('https://invoice-generator-6mfzlw7k6-taruns-projects-cdc632e0.vercel.app/api/auth/logout', {}, { withCredentials: true });
+      await axios.post('https://invoice-frontend-beta-neon.vercel.app/api/auth/logout', {}, { withCredentials: true });
       onLogout();            // update state in App.js
       navigate('/');         // redirect to login
     } catch (err) {
