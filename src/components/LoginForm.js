@@ -11,7 +11,7 @@ const LoginForm = ({onLogin}) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://invoice-frontend-beta-neon.vercel.app/api/auth/login',
+      await axios.post('https://invoice-generator-ebon-eight.vercel.app/api/auth/login',
         { email, password },
         { withCredentials: true }
       );
