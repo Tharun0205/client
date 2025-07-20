@@ -1,0 +1,31 @@
+.invoiceList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* justify-content: center; */
+  padding: 20px;
+}
+body{
+    margin:0;
+    padding:0;
+    background:linear-gradient(to right,#8e9eab, #eef2f3);
+    font-family: 'Segoe UI',sans-serif;
+}
+.invoiceCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  min-width: 250px;
+  max-width: 300px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.invoiceCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}

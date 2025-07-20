@@ -1,0 +1,89 @@
+/* Container centering */
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;           /* Only takes height if needed */
+  padding: 40px 20px;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  box-sizing: border-box;
+}
+
+
+/* Glass effect form */
+.invoiceForm {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* Headings */
+.invoiceForm h2,
+.invoiceForm h3,
+.invoiceForm h4 {
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Inputs */
+.invoiceForm input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.invoiceForm input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Button */
+.invoiceForm button {
+  padding: 12px 20px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.invoiceForm button:hover {
+  background-color: #63b3ed;
+  transform: scale(1.03);
+}
+
+/* Item inputs spacing */
+.invoiceForm > div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .invoiceForm {
+    padding: 20px;
+  }
+
+  .invoiceForm > div {
+    flex-direction: column;
+  }
+}
