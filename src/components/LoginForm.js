@@ -3,7 +3,7 @@ import './LoginForm.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import RegisterForm from "./RegisterForm";
+import RegisterForm from "./RegisterForm.js";
 const LoginForm = ({onLogin}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,7 +11,7 @@ const LoginForm = ({onLogin}) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/login',
+      await axios.post('https://invoice-generator-6mfzlw7k6-taruns-projects-cdc632e0.vercel.app/api/auth/login',
         { email, password },
         { withCredentials: true }
       );

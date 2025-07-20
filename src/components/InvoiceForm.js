@@ -61,12 +61,12 @@ const InvoiceForm = () => {
   const invoiceData = { ...form, subtotal: undefined, total };
 
   try {
-    const res = await axios.post('http://localhost:5000/api/invoices', invoiceData, {
+    const res = await axios.post('https://invoice-generator-6mfzlw7k6-taruns-projects-cdc632e0.vercel.app/api/invoices', invoiceData, {
       withCredentials: true
     });
 
     const filename = res.data.pdfFilename;
-    const downloadUrl = `http://localhost:5000/api/invoices/pdf/${filename}`;
+    const downloadUrl = `https://invoice-generator-6mfzlw7k6-taruns-projects-cdc632e0.vercel.app/api/invoices/pdf/${filename}`;
     window.location.href = downloadUrl;
 
     alert('Invoice saved and download started!');

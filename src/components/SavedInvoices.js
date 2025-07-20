@@ -6,7 +6,7 @@ const SavedInvoices=()=>{
     useEffect(()=>{
         const fetchInvoices=async ()=>{
             try{
-                const res=await axios.get('http://localhost:5000/api/invoices/my',{
+                const res=await axios.get('https://invoice-generator-6mfzlw7k6-taruns-projects-cdc632e0.vercel.app/api/invoices/my',{
                     withCredentials:true
                 });
                 setInvoices(res.data);

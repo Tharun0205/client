@@ -12,7 +12,7 @@ const RegisterForm=()=>{
     const registerUser=async(e)=>{
         e.preventDefault();
         try{
-            await axios.post('http://localhost:5000/api/auth/register',{
+            await axios.post('https://invoice-generator-6mfzlw7k6-taruns-projects-cdc632e0.vercel.app/api/auth/register',{
                 username,
                 email,
                 password
