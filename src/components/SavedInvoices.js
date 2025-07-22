@@ -10,7 +10,7 @@ const SavedInvoices = () => {
       try {
         const token = localStorage.getItem('authToken'); // make sure you stored this during login
 
-        const res = await axios.get('https://invoice-generator-ebon-eight.vercel.app/api/invoices/my', {
+        const res = await axios.get('https://invoice-backend-ql8a.onrender.com/api/invoices/my', {
           headers: {
             Authorization: `Bearer ${token}`
           }

@@ -61,12 +61,12 @@ const InvoiceForm = () => {
   const invoiceData = { ...form, subtotal: undefined, total };
 
   try {
-    const res = await axios.post('https://invoice-generator-ebon-eight.vercel.app/api/invoices', invoiceData, {
+    const res = await axios.post('https://invoice-backend-ql8a.onrender.com/api/invoices', invoiceData, {
       withCredentials: true
     });
 
     const filename = res.data.pdfFilename;
-    const downloadUrl = `https://invoice-generator-ebon-eight.vercel.app/api/invoices/pdf/${filename}`;
+    const downloadUrl = `https://invoice-backend-ql8a.onrender.com/api/invoices/pdf/${filename}`;
     window.location.href = downloadUrl;
 
     alert('Invoice saved and download started!');
