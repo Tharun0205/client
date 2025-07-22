@@ -8,12 +8,9 @@ const SavedInvoices = () => {
   useEffect(() => {
     const fetchInvoices = async () => {
       try {
-        const token = localStorage.getItem('authToken'); // make sure you stored this during login
-
+        // No token logic, just include credentials!
         const res = await axios.get('https://invoice-backend-ql8a.onrender.com/api/invoices/my', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
+          withCredentials: true // <-- This is key!
         });
 
         setInvoices(res.data);
