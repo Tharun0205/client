@@ -1,22 +1,22 @@
 import React from 'react';
-import axios from 'axios';
 import './LogoutButton.css';
 import { useNavigate } from 'react-router-dom';
 
 const LogoutButton = ({ onLogout }) => {
   const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    try {
-      await axios.post('https://invoice-backend-ql8a.onrender.com/api/auth/logout', {}, { withCredentials: true });
-      onLogout();            // update state in App.js
-      navigate('/');         // redirect to login
-    } catch (err) {
-      console.error('Logout failed', err);
-    }
+  const handleLogout = () => {
+    // Just remove the token
+    localStorage.removeItem('authToken');
+    onLogout();          // update App.js state
+    navigate('/');       // redirect to login
   };
 
-  return <button  className="logoutButton" onClick={handleLogout}>Logout</button>;
+  return (
+    <button className="logoutButton" onClick={handleLogout}>
+      Logout
+    </button>
+  );
 };
 
 export default LogoutButton;

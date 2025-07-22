@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import './LoginForm.css';
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const LoginForm = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -14,14 +13,15 @@ const LoginForm = ({ onLogin }) => {
     try {
       const response = await axios.post(
         'https://invoice-backend-ql8a.onrender.com/api/auth/login',
-        { email, password },
-        { withCredentials: true }
+        { email, password }
       );
 
-      // 💾 Store token securely for authenticated API requests
+      // Store JWT token
       localStorage.setItem('authToken', response.data.token);
 
-      onLogin();
+      // Pass token up to parent
+      onLogin(response.data.token);
+
       navigate('/invoice');
     } catch (err) {
       alert("Login failed");
